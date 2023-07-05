@@ -2,11 +2,12 @@
 package testauthentication;
 
 
-import authontication.DashboardPage;
-import authontication.LoginPage;
+import authentication.DashboardPage;
+import authentication.LoginPage;
 import base.BasePage;
 
-import homepageBmwUsa.HomePageBmwUsa;
+import homepage.HomePage;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -17,7 +18,7 @@ public class TestAuthentication extends BasePage {
     @Test(priority= 1, groups= {"BAT"},dataProvider = "loginDataProvider")
 
     public void testLogin(String email,String password){
-        HomePageBmwUsa homePage = new HomePageBmwUsa();
+        HomePage homePage = new HomePage();
 
         LoginPage loginPage=homePage.clickOnLoginLink();
         DashboardPage dashboardPage=loginPage.doSign(email, password);
