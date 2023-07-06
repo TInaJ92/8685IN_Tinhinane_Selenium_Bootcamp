@@ -78,7 +78,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://espn.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://mbusa.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -141,6 +141,18 @@ public class BasePage {
             e.printStackTrace();
         } catch (StaleElementReferenceException e2) {
             element = driver.findElement(by);
+        }
+        return element;
+    }
+    public WebElement getVisibleElement(WebElement element) {
+
+
+        try {
+            fluentWait.until(ExpectedConditions.visibilityOf(element));
+        } catch (ElementNotInteractableException e) {
+            e.printStackTrace();
+        } catch (StaleElementReferenceException e2) {
+            fluentWait.until(ExpectedConditions.visibilityOf(element));
         }
         return element;
     }
@@ -347,5 +359,11 @@ public class BasePage {
         return calendar.getTime();
     }
     // endregion
+    public void clickOnByTabKey() {
+        Actions action = new Actions(driver);
+        action.sendKeys(Keys.ESCAPE).sendKeys(Keys.TAB).sendKeys(Keys.TAB).
+                sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
+        ;
+    }
 
-}
+    }
