@@ -1,7 +1,8 @@
-package mbusa.pom.homepage;
+package homepage;
 
 import base.BasePage;
-import mbusa.pom.loginpage.LoginPage;
+
+import loginpage.LoginPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -45,14 +46,14 @@ public class HomePage extends BasePage {
         safeClickOnElement(okButton);
 
     }
-    public LoginPage workFlowLogin(){
+    public void  login(){
         getVisibleElement(myAccountButton);
         clickOnByTabKey();
         clickOnMyAccountButton();
         //  switchToIframe();
         clickOnLoginButton();
 
-        return new LoginPage();
+
     }
 }
 

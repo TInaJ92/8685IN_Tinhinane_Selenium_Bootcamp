@@ -1,7 +1,8 @@
-package mbusa.pom.loginpage;
+package loginpage;
 
 import base.BasePage;
-import mbusa.pom.homepage.HomePage;
+
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,11 +23,11 @@ public class PasswordPage extends BasePage {
     public void clickOnNextButton(){
         safeClickOnElement(nextButton);
     }
-    public HomePage authenticatePassword(String password){
+    public void  authenticatePassword(String password){
         inputPassword(password);
         clickOnNextButton();
 
-        return new HomePage();
+
 
     }
 }

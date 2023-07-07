@@ -1,5 +1,5 @@
 
-package mbusa.pom.loginpage;
+package loginpage;
 
 import base.BasePage;
 import org.openqa.selenium.WebElement;
@@ -30,6 +30,6 @@ public class LoginPage extends BasePage {
         inputEmail(email);
         clickOnContinueButton();
 
-        return new PasswordPage ();
+        return new PasswordPage();
     }
 }
