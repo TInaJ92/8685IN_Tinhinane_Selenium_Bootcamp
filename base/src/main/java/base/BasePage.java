@@ -78,7 +78,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://espn.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https:apartments.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -225,6 +225,8 @@ public class BasePage {
     }
 
     public void switchToFrameByElement(WebElement frame) {
+
+        webDriverWait.until(ExpectedConditions.visibilityOf(frame));
         driver.switchTo().frame(frame);
     }
 
@@ -345,6 +347,15 @@ public class BasePage {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(millis);
         return calendar.getTime();
+    }
+
+    protected static boolean checkElementPresent(WebElement element)
+    {
+
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
+        boolean flag=element.isDisplayed();
+        return flag;
+
     }
     // endregion
 
