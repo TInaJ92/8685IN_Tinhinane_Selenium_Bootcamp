@@ -53,4 +53,20 @@ public class SignInPage extends BasePage {
         clickOnSignInButton();
         return new HomePage();
     }
+
+
+   /*  /**Negative Testing Invalid Email ...*/
+   /* @FindBy(xpath="//li[@class=\"parsley-type\"]")
+    public WebElement errorMessage;
+    public void setInvalidEmail(){sendKeysToElement(email, "tinatebany@@gmail.com");}
+    public HomePage TestingInvalidEmail (String email, String password){
+        switchToIframe();
+        TestingInvalidEmail(email);
+        enterPassword(password);
+        clickOnSignInButton();
+        return new HomePage();
+
+    }*/
+
+
 }
