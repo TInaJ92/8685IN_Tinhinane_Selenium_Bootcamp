@@ -8,16 +8,21 @@ import org.openqa.selenium.support.PageFactory;
 import searchpage.ModelSelectedPage;
 
 public class HomePage extends BasePage {
-    public HomePage() {
-        PageFactory.initElements(driver, this);
+
+    public HomePage(){
+        PageFactory.initElements(driver,this);
     }
-
-    @FindBy(xpath = "//a[@href='http://mybmw.bmwusa.com']")
+    @FindBy(xpath="//a[@href='http://mybmw.bmwusa.com']")
     public WebElement logInLink;
-
-    @FindBy(xpath = "/html/body/div[2]/div/div/div[2]/div[5]/div/div[1]/div/div[3]/div/form/div")
+    @FindBy(xpath = "//div[@class=\"custom-header-subtitle __b\"]//a")
+    public WebElement RegisterButton;
+    public void clickOnRegistrationButton(){safeClickOnElement(RegisterButton);}
+    @FindBy(xpath = "//div[@class=\"message_content\"]")
+    public WebElement errorMessage;
+    @FindBy(xpath = "(//button[@aria-label='Search'])[2]")
     public WebElement searchIcon;
-    @FindBy(xpath = "/html/body/div[3]/div/div/div[4]/div/div/div[1]/form/div/input")
+
+    @FindBy(xpath = "(//input[@name='site search'])[2]")
     public WebElement searchBar;
 
     @FindBy(xpath = "//div[@class='globalnav-primary-search-results bmw-grid-col-default-25 bmw-grid-col-lg-10 bmw-grid-col-lg-offset-14 globalnav-primary-search-results--active']//a[.='MyBMW']")
@@ -28,7 +33,8 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"destination_publishing_iframe_bmwmini_0\"]")
     public WebElement iframeSearchBar;
 
-    public LoginPage clickOnLoginLink() {
+
+    public LoginPage clickOnLogInLink(){
         safeClickOnElement(logInLink);
         return new LoginPage();
     }
@@ -37,6 +43,8 @@ public class HomePage extends BasePage {
     }
 
     public void enterSearchTerm(String model, String year) {
+        //switchToFrameByElement(iframeSearchBar);
+        safeClickOnElement(searchBar);
         sendKeysToElement(searchBar, model);
         sendKeysToElement(searchBar, year);
         searchBar.sendKeys(Keys.RETURN);
@@ -52,6 +60,8 @@ public class HomePage extends BasePage {
 
     public ModelSelectedPage clickOnVehicleModel() {
         safeClickOnElement(vehicleModel);
-        return new ModelSelectedPage  ();
-    }
+        return new ModelSelectedPage();
+}
+
+
 }

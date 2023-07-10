@@ -1,15 +1,13 @@
-
 package testsearch;
 
 import base.BasePage;
 import homepage.HomePage;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utils.ExcelData;
 
 public class TestSearch extends BasePage {
-    @Test(priority = 1, groups = {"BAT"}, dataProvider = "searchDataProvider")
+    @Test( dataProvider = "searchDataProvider")
 
     public void testSearch(String model, String year) {
         HomePage homePage = new HomePage();
