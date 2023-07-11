@@ -4,8 +4,8 @@ import base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import page_library.HomePage;
-import page_library.SearchResultsPage;
+import homepage.HomePage;
+import searchpage.SearchResultsPage;
 import utils.ExcelData;
 
 public class TestSearch extends BasePage {

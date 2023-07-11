@@ -1,6 +1,6 @@
 
 
-package page_library;
+package searchpage;
 
 import base.BasePage;
 import org.openqa.selenium.WebElement;
