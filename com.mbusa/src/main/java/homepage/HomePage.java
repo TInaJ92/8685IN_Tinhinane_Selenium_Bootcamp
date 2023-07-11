@@ -27,7 +27,17 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//span[@class='global-headerbutton-label global-headerbutton-utility-inner']")
     public WebElement usernameHeader;
-
+    @FindBy(xpath = "//span[.='Find a Dealer']")
+    public WebElement findADealerButton;
+    @FindBy(xpath = "//div[@class='form__input form__input--inline']/input[@class='form__input-field form__input-field--can-reset']")
+    public WebElement zipCodeInputField;
+    @FindBy(xpath = "//button[@class='button button_primary']")
+    public WebElement searchButton;
+    @FindBy(xpath ="//ul[@class='location-search__list']/li[contains(.,'Philadelphia, PA')]")
+    public WebElement firstOption;
+    public void clickOnFirstOption(){
+        safeClickOnElement(firstOption);
+    }
     public void clickOnMyAccountButton(){
 
         safeClickOnElement(myAccountButton);
@@ -36,10 +46,25 @@ public class HomePage extends BasePage {
 
         driver.switchTo().frame(iframe);
     }
+    public void clickOnSearchButton(){
+        safeClickOnElement(searchButton);
+
+    }
+    public void clickOnFindADealerButton(){
+        safeClickOnElement(findADealerButton);
+
+    }
+    public void enterZipCode(String zipCode){
+        sendKeysToElement(zipCodeInputField,zipCode);
+
+    }
     public void clickOnLoginButton(){
         safeClickOnElement(loginButton);
 
     }
+
+
+
     public void clickOnOkButton()
     {
 
@@ -54,6 +79,13 @@ public class HomePage extends BasePage {
         clickOnLoginButton();
 
 
+    }
+    public ResultPage doFindDealer(String zipCode) {
+        clickOnFindADealerButton();
+        enterZipCode(zipCode);
+        clickOnFirstOption();
+        clickOnSearchButton();
+        return new ResultPage();
     }
 }
 
