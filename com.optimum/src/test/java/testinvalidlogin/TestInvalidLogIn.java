@@ -8,10 +8,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestInvalidLogIn extends BasePage {
-    @Test (priority = 2 , groups = {"BAT"} )
+    @Test
     public void testInvalidLogIn (){
-        HomePage homePage = new HomePage();
-        homePage.clickOnSignInMobile();
+        HomePage homepage = new HomePage();
+       homepage.clickOnSignInMobile();
         LogInPage logInPage = new LogInPage();
         String email = "tinatebany@gmail.com";
         String password = "1245kdgdgy";
