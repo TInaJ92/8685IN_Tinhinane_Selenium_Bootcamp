@@ -44,7 +44,7 @@ public class AddModifyCartPage extends BasePage {
     public void modifyItem()
     {
         clickOnElement(cartButton);
-        clearSendKeysToElement(modifyButton,"2");
+        clearSendKeysToElement(modifyButton,"3");
         clickOnElement(updateButton);
     }
 
