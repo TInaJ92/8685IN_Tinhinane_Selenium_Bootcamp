@@ -12,7 +12,7 @@ public class StoreLocatorPage extends BasePage {
     @FindBy (xpath = "//input[@id='q']")
     public WebElement cityInputField;
 
-    @FindBy(xpath ="/button[@class='search-button Locator-button Locator-button--search js-search-button']" )
+    @FindBy(xpath ="//button[@class='search-button Locator-button Locator-button--search js-search-button']" )
     public WebElement arrowIcon;
     public void enterCity(String city){
         sendKeysToElement(cityInputField,city);

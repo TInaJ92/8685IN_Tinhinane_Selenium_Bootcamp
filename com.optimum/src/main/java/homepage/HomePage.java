@@ -13,7 +13,7 @@ public class HomePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//button[@class=\"header-account-button\"]")
+    @FindBy(xpath = "//button[@class='header-account-button']")
     public WebElement signInButton1;
     @FindBy(xpath = "//div[@class='header-item store-locator store-locator-two']//b[.='Store Locator']")
     public WebElement storeLocatorLink;
@@ -41,4 +41,5 @@ public class HomePage extends BasePage {
         hoverOverSignInButton();
         clickOnMobileOption();
     }
+
 }
