@@ -1,6 +1,7 @@
-package homepage;
+package test_homepage;
 
 import base.BasePage;
+import homepage.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
