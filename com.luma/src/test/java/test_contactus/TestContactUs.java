@@ -22,3 +22,11 @@ public class TestContactUs extends BasePage {
         Assert.assertTrue(isElementVisible(contactUsPage.thankYouForContactingUsMessage));
     }
 }
+/*
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+<groupId>mysql</groupId>
+<artifactId>mysql-connector-java</artifactId>
+<version>8.0.27</version>
+</dependency>
+ */

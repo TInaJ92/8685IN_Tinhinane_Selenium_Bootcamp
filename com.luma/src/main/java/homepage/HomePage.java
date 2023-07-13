@@ -67,31 +67,6 @@ public class HomePage extends BasePage {
         safeClickOnElement(buttonActionSearch);
     }
 
-
-    public void clickOnWomenButton() {
-        hoverOverElement(womenButton);
-    }
-
-    public void clickOnTopsButton() {
-        safeClickOnElement(topsButton);
-    }
-
-    public void clickOnCategoryButton() {
-        safeClickOnElement(categoryButton);
-    }
-
-    public void clickOnJacketsButton() {
-        safeClickOnElement(jacketButton);
-    }
-
-    public void doSelect() {
-        clickOnWomenButton();
-        clickOnTopsButton();
-        clickOnCategoryButton();
-        clickOnJacketsButton();
-
-    }
-
     public void getInputEmail(String email) {
         sendKeysToElement(inputValidEmailField, email);
     }
@@ -112,6 +87,29 @@ public class HomePage extends BasePage {
 
     public void clickOnLogOutButton() {
         safeClickOnElement(logOutButton);
+    }
+    public void clickOnWomenButton() {
+        hoverOverElement(womenButton);
+    }
+
+    public void clickOnTopsButton() {
+        safeClickOnElement(topsButton);
+    }
+
+    public void clickOnCategoryButton() {
+        safeClickOnElement(categoryButton);
+    }
+
+    public void clickOnJacketsButton() {
+        safeClickOnElement(jacketButton);
+    }
+
+    public void doFilterTo() {
+        clickOnWomenButton();
+        clickOnTopsButton();
+        clickOnCategoryButton();
+        clickOnJacketsButton();
+
     }
 
     public void doLogOut() {
