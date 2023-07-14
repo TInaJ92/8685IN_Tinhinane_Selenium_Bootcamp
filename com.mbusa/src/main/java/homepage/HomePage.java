@@ -6,6 +6,9 @@ import loginpage.LoginPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import searchpage.SearchPage;
+import shoppingpage.ShopPartsPage;
+import vehiclepage.VehiclePage;
 
 public class HomePage extends BasePage {
 
@@ -27,17 +30,22 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//span[@class='global-headerbutton-label global-headerbutton-utility-inner']")
     public WebElement usernameHeader;
-    @FindBy(xpath = "//span[.='Find a Dealer']")
-    public WebElement findADealerButton;
+    @FindBy(xpath="//div[@class='full-height-hero__image-container full-height-hero__image-container--width']//a[.='Explore']")
+    public WebElement exploreButton;
+
+    @FindBy(xpath = "//span[.='Shopping']")
+    public WebElement shoppingLink;
+
+    @FindBy(xpath="//span[.='Find a Dealer']")
+    public WebElement findDealer;
     @FindBy(xpath = "//div[@class='form__input form__input--inline']/input[@class='form__input-field form__input-field--can-reset']")
     public WebElement zipCodeInputField;
     @FindBy(xpath = "//button[@class='button button_primary']")
     public WebElement searchButton;
-    @FindBy(xpath ="//ul[@class='location-search__list']/li[contains(.,'Philadelphia, PA')]")
+
+    @FindBy(xpath= "//ul[@class='location-search__list']/li[contains(.,'Philadelphia, PA')]")
     public WebElement firstOption;
-    public void clickOnFirstOption(){
-        safeClickOnElement(firstOption);
-    }
+
     public void clickOnMyAccountButton(){
 
         safeClickOnElement(myAccountButton);
@@ -46,47 +54,53 @@ public class HomePage extends BasePage {
 
         driver.switchTo().frame(iframe);
     }
-    public void clickOnSearchButton(){
-        safeClickOnElement(searchButton);
-
-    }
-    public void clickOnFindADealerButton(){
-        safeClickOnElement(findADealerButton);
-
-    }
-    public void enterZipCode(String zipCode){
-        sendKeysToElement(zipCodeInputField,zipCode);
-
-    }
     public void clickOnLoginButton(){
         safeClickOnElement(loginButton);
 
     }
-
-
-
     public void clickOnOkButton()
     {
-
         safeClickOnElement(okButton);
-
     }
-    public void  login(){
+    public LoginPage doLogin(){
         getVisibleElement(myAccountButton);
         clickOnByTabKey();
         clickOnMyAccountButton();
         //  switchToIframe();
         clickOnLoginButton();
 
-
+        return new LoginPage();
     }
-    public ResultPage doFindDealer(String zipCode) {
-        clickOnFindADealerButton();
+
+    public VehiclePage clickOnExploreButton(){
+        safeClickOnElement(exploreButton);
+        return new VehiclePage();
+    }
+    public ShopPartsPage clickOnShoppingLink(){
+        safeClickOnElement(shoppingLink);
+        return new ShopPartsPage();
+    }
+
+    public void clickOnFindDealer(){
+        safeClickOnElement(findDealer);
+    }
+    public void enterZipCode(String zipCode){
+        //safeClickOnElement(zipCodeInputField);
+        sendKeysToElement(zipCodeInputField,zipCode);
+    }
+    public void clickOnFirstOption(){
+        safeClickOnElement(firstOption);
+    }
+    public void clickOnSearchButton(){
+        safeClickOnElement(searchButton);
+    }
+
+    public SearchPage doFindDealer(String zipCode){
+        clickOnFindDealer();
         enterZipCode(zipCode);
         clickOnFirstOption();
         clickOnSearchButton();
-        return new ResultPage();
+        return new SearchPage();
     }
+
 }
-
-

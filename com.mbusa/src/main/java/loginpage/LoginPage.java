@@ -1,17 +1,16 @@
-
 package loginpage;
 
 import base.BasePage;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage {
 
-    public LoginPage(){
+    public LoginPage() {
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//input[@id='username']")
     public WebElement inputEmailBar;
 
@@ -19,14 +18,15 @@ public class LoginPage extends BasePage {
     public WebElement continueButton;
 
 
-    public void inputEmail(String email){
+    public void inputEmail(String email) {
         sendKeysToElement(inputEmailBar, email);
     }
-    public void clickOnContinueButton(){
+
+    public void clickOnContinueButton() {
         safeClickOnElement(continueButton);
     }
 
-    public PasswordPage authenticateEmail(String email){
+    public PasswordPage authenticateEmail(String email) {
         inputEmail(email);
         clickOnContinueButton();
 

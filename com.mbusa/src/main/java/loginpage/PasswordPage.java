@@ -1,8 +1,10 @@
 package loginpage;
 
+
+
 import base.BasePage;
 
-
+import homepage.HomePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,11 +25,11 @@ public class PasswordPage extends BasePage {
     public void clickOnNextButton(){
         safeClickOnElement(nextButton);
     }
-    public void  authenticatePassword(String password){
+    public HomePage authenticatePassword(String password){
         inputPassword(password);
         clickOnNextButton();
 
-
+        return new HomePage();
 
     }
 }
