@@ -9,4 +9,19 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://www.apartments.com"/>
 
+    <test name="smoke">
+        <!--        <groups>-->
+        <!--            <run>-->
+        <!--                <include name=""/>-->
+        <!--            </run>-->
+        <!--        </groups>-->
+        <classes>
+            <class name="test_authentication.TestAuthentication"/>
+            <class name="test_search.TestSearch"/>
+            <class name="test_accountsettings.TestAccountSettings"/>
+            <class name="test_restpassword.TestResetPassword"/>
+
+        </classes>
+    </test>
+
 </suite>
