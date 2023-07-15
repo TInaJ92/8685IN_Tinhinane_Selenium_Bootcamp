@@ -8,5 +8,17 @@
 
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://www.investing.com/"/>
+    <test name="BAT">
+        <classes>
+
+            <class name="test_search.TestSearch"/>
+            <class name="test_authentication.TestAuthentication"/>
+            <class name="test_addtowatchlist.TestAddToWatchList"/>
+            <class name="testdynamictable.TestDynamicTables"/>
+
+
+
+        </classes>
+    </test>
 
 </suite>
