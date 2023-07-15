@@ -9,6 +9,7 @@ import shoppingpage.ShopPartsPage;
 public class TestShopParts extends BasePage {
 
 
+
     @Test(priority = 3,groups={"BAT"})
     public void testDoShopParts(){
         HomePage homePage=new HomePage();

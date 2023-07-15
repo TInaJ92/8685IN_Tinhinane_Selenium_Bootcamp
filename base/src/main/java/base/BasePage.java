@@ -358,12 +358,13 @@ public class BasePage {
         calendar.setTimeInMillis(millis);
         return calendar.getTime();
     }
-    // endregion
+
     public void clickOnByTabKey() {
         Actions action = new Actions(driver);
         action.sendKeys(Keys.ESCAPE).sendKeys(Keys.TAB).sendKeys(Keys.TAB).
                 sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
         ;
     }
+    // endregion
 
     }
