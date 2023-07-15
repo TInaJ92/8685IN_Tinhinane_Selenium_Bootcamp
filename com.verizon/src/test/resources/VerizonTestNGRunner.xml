@@ -9,4 +9,12 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://verizon.com"/>
 
+    <test name="BAT">
+
+        <classes>
+            <class name="test_app_verizon.TestDoSearch"/>
+            <class name="teststoresearch.TestStoreSearch"/>
+        </classes>
+    </test>
+
 </suite>
