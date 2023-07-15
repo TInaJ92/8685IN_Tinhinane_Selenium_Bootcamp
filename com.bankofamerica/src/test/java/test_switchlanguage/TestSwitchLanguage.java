@@ -5,11 +5,7 @@ import base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Test_SwitchLanguage extends BasePage {
-
-
-
-
+public class TestSwitchLanguage extends BasePage {
 
     @Test(priority =1,groups={"BAT"})
     public void switchLanguages(){
