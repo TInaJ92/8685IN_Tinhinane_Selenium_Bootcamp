@@ -19,13 +19,14 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//button[contains(@aria-label,'OK')]")
     public WebElement okButton;
 
-    @FindBy(xpath = "//span[@class='global-headerbutton-label global-headerbutton-utility-inner']")
+   // @FindBy(xpath = "//span[@class='global-headerbutton-label global-headerbutton-utility-inner']")
+   @FindBy(xpath = "//span[contains(.,'My Account')]")
     public WebElement myAccountButton;
 
     @FindBy(id = "text-zoom-tracker")
     public WebElement iframe;
 
-    @FindBy(xpath = "//button[@class='nav-profilelogin nav-profilebutton button button_primary button--wide ']")
+    @FindBy(xpath = "//button[contains(.,'Log In')]")
     public WebElement loginButton;
 
     @FindBy(xpath = "//span[@class='global-headerbutton-label global-headerbutton-utility-inner']")
@@ -67,6 +68,7 @@ public class HomePage extends BasePage {
         clickOnByTabKey();
         clickOnMyAccountButton();
         //  switchToIframe();
+        getVisibleElement(loginButton);
         clickOnLoginButton();
 
         return new LoginPage();
@@ -98,6 +100,7 @@ public class HomePage extends BasePage {
     public SearchPage doFindDealer(String zipCode){
         clickOnFindDealer();
         enterZipCode(zipCode);
+        clickOnByTabKey();
         clickOnFirstOption();
         clickOnSearchButton();
         return new SearchPage();

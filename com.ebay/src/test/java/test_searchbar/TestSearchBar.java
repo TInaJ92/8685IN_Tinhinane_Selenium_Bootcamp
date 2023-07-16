@@ -1,3 +1,4 @@
+package test_searchbar;
 
 import base.BasePage;
 import homepage.HomePage;

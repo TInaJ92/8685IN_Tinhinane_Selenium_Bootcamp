@@ -374,15 +374,17 @@ public class BasePage {
         boolean flag = element.isDisplayed();
         return flag;
 
+    }
 
-       /* public  void clickOnByTabKey () {
+        public void clickOnByTabKey () {
             Actions action = new Actions(driver);
-            action.sendKeys(Keys.ESCAPE).sendKeys(Keys.TAB).sendKeys(Keys.TAB).
-                    sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
-            ;
+            action.sendKeys(Keys.ESCAPE).sendKeys(Keys.TAB). sendKeys(Keys.TAB).
+                    sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).
+                    sendKeys(Keys.ENTER).build().perform();
 
-        }*/
+
+        }
         // endregion
 
-    }
+
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-
-<suite name="Ebay" verbose="1" >
+<suite name="Regression Suite For Ebay">
+<test name="Ebay" verbose="1" >
 
     <listeners>
         <listener class-name="listeners.AnnotationTransformer"/>
@@ -8,28 +8,19 @@
 
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://ebay.com"/>
-    <!--        <groups>-->
-    <!--            <run>-->
-    <!--                <include name=""/>-->
-    <!--            </run>-->
-    <!--        </groups>-->
+
     <classes>
 
-        <class name="test_contactus.TestContactUs"/>
-        <class name="test_registration.TestRegistration"/>
-        <class name="test_homepage.TestHomePage"/>
-        <class name="test_shoppingcart.TestShoppingCart"/>
-        <class name="test_filtertheresult.TestFilterTheResult"/>
-        <class name="test_subscribe.TestSubscribe"/>
-        <class name="test_login.TestLoginWithInvalidCredentials"/>
-        <class name="test_login.TestLoginWithValidCredentials"/>
-        <class name="test_searchresultpage.TestSearchResultPage"/>
 
+        <class name="test_search.TestSearch"/>
+        <class name="testhomepage.TestHomePage"/>
+        <class name="testshoppingcart.TestShoppingCart"/>
+        <class name="test_searchbar.TestSearchBar"/>
 
     </classes>
-    </test>
+</test>
+</suite>
 
-        </suite>
 
 
-        </suite>
+

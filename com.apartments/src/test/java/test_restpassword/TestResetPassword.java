@@ -1,4 +1,4 @@
-package test_resetpassword;
+package test_restpassword;
 
 import authenticationpage.SignInPage;
 import base.BasePage;
