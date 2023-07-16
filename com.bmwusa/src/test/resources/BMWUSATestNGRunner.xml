@@ -7,6 +7,17 @@
     </listeners>
 
     <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="http://bmwusa.com"/>
+    <parameter name="url" value="https://www.bmwusa.com/"/>
+
+    <test name="BAT">
+        <classes>
+            <class name="test_homepage.TestHomePage"/>
+            <class name="test_shoppingcart.TestShoppingCart"/>
+            <class name="testauthentication.TestAuthentication"/>
+            <class name="testsearch.TestSearch"/>
+
+        </classes>
+    </test>
+
 
 </suite>

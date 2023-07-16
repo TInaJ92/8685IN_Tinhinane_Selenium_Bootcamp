@@ -7,7 +7,7 @@
     </listeners>
 
     <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="http://verizon.com"/>
+    <parameter name="url" value="https://verizon.com/"/>
 
     <test name="BAT">
 
