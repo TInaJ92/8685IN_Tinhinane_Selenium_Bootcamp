@@ -16,7 +16,7 @@ import utils.ExcelData;
 
 public class TestAuthentication extends BasePage {
 
-    @Test(priority = 1, groups = {"BAT"}, dataProvider = "loginDataProvider")
+    @Test(priority = 1, groups = {"Bat"}, dataProvider = "loginDataProvider")
 
     public void testLogin(String email, String password) {
         HomePage homePage = new HomePage();
