@@ -80,12 +80,7 @@ public class BasePage {
     @BeforeMethod
 
 
-
-
     public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https:apartments.com") String url) {
-
-
-
 
 
         if (Boolean.parseBoolean(driverConfigEnabled)) {
@@ -150,6 +145,19 @@ public class BasePage {
             e.printStackTrace();
         } catch (StaleElementReferenceException e2) {
             element = driver.findElement(by);
+        }
+        return element;
+    }
+
+    public WebElement getVisibleElement(WebElement element) {
+
+
+        try {
+            fluentWait.until(ExpectedConditions.visibilityOf(element));
+        } catch (ElementNotInteractableException e) {
+            e.printStackTrace();
+        } catch (StaleElementReferenceException e2) {
+            fluentWait.until(ExpectedConditions.visibilityOf(element));
         }
         return element;
     }
@@ -358,14 +366,23 @@ public class BasePage {
         return calendar.getTime();
     }
 
-    protected static boolean checkElementPresent(WebElement element)
-    {
+
+
+    protected static boolean checkElementPresent(WebElement element) {
 
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
-        boolean flag=element.isDisplayed();
+        boolean flag = element.isDisplayed();
         return flag;
 
-    }
-    // endregion
 
+       /* public  void clickOnByTabKey () {
+            Actions action = new Actions(driver);
+            action.sendKeys(Keys.ESCAPE).sendKeys(Keys.TAB).sendKeys(Keys.TAB).
+                    sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
+            ;
+
+        }*/
+        // endregion
+
+    }
 }

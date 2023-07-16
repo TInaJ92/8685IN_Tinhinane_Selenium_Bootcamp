@@ -9,7 +9,15 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://mbusa.com"/>
 
-    <test name="test">
+    <test name="BAT">
+        <classes>
+            <class name="test_authentication.TestAuthentication"/>
+            <class name="test_comparevehicle.TestCompareVehicles"/>
+            <class name="test_findlocation.TestFindLocation"/>
+            <class name="test_shopparts.TestShopParts"/>
+
+
+        </classes>
     </test>
 
 
