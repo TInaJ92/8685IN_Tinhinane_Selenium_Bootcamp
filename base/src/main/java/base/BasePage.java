@@ -81,7 +81,7 @@ public class BasePage {
 
 
 
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https:apartments.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https:verizon.com") String url) {
 
 
 
