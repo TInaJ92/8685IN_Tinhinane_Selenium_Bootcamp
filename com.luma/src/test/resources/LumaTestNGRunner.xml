@@ -22,7 +22,10 @@
         <class name="test_shoppingcart.TestShoppingCart"/>
         <class name="test_filtertheresult.TestFilterTheResult"/>
         <class name="test_subscribe.TestSubscribe"/>
-        <class name="test_contactus.TestContactUs"/>
+        <class name="test_login.TestLoginWithInvalidCredentials"/>
+        <class name="test_login.TestLoginWithValidCredentials"/>
+        <class name="test_searchresultpage.TestSearchResultPage"/>
+
 
     </classes>
     </test>
